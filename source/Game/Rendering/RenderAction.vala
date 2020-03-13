@@ -2,7 +2,7 @@ using Gee;
 
 public abstract class RenderAction : Object
 {
-    public RenderAction(float time)
+    protected RenderAction(float time)
     {
         this.time = time;
     }
