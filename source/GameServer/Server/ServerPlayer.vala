@@ -2,7 +2,7 @@ namespace GameServer
 {
     public abstract class ServerPlayer : Object
     {
-        public ServerPlayer(string name, bool bot)
+        protected ServerPlayer(string name, bool bot)
         {
             this.name = name;
             this.bot = bot;
