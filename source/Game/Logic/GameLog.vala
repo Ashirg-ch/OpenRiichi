@@ -2,7 +2,7 @@ public class GameLog : Serializable
 {
     private GameLogRound? round;
 
-    public GameLog(VersionInfo version, GameStartInfo start_info, ServerSettings settings)
+    protected GameLog(VersionInfo version, GameStartInfo start_info, ServerSettings settings)
     {
         this.version = version;
         this.start_info = start_info;
