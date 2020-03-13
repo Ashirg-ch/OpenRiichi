@@ -12,25 +12,25 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractBidirList<G> : Gee.AbstractList<G>, Gee.BidirList<G> {
-		public AbstractBidirList ();
+		protected AbstractBidirList ();
 		public abstract Gee.BidirListIterator<G> bidir_list_iterator ();
 		public virtual Gee.BidirList<G> read_only_view { owned get; }
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractBidirSortedMap<K,V> : Gee.AbstractSortedMap<K,V>, Gee.BidirSortedMap<K,V> {
-		public AbstractBidirSortedMap ();
+		protected AbstractBidirSortedMap ();
 		public abstract Gee.BidirMapIterator<K,V> bidir_map_iterator ();
 		public virtual Gee.BidirSortedMap<K,V> read_only_view { owned get; }
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractBidirSortedSet<G> : Gee.AbstractSortedSet<G>, Gee.BidirSortedSet<G> {
-		public AbstractBidirSortedSet ();
+		protected AbstractBidirSortedSet ();
 		public abstract Gee.BidirIterator<G> bidir_iterator ();
 		public virtual Gee.BidirSortedSet<G> read_only_view { owned get; }
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractCollection<G> : GLib.Object, Gee.Traversable<G>, Gee.Iterable<G>, Gee.Collection<G> {
-		public AbstractCollection ();
+		protected AbstractCollection ();
 		public abstract bool add (G item);
 		public abstract void clear ();
 		public abstract bool contains (G item);
@@ -43,7 +43,7 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractList<G> : Gee.AbstractCollection<G>, Gee.List<G> {
-		public AbstractList ();
+		protected AbstractList ();
 		public abstract new G @get (int index);
 		public abstract int index_of (G item);
 		public abstract void insert (int index, G item);
@@ -55,7 +55,7 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractMap<K,V> : GLib.Object, Gee.Traversable<Gee.Map.Entry<K,V>>, Gee.Iterable<Gee.Map.Entry<K,V>>, Gee.Map<K,V> {
-		public AbstractMap ();
+		protected AbstractMap ();
 		public abstract void clear ();
 		public virtual bool @foreach (Gee.ForallFunc<Gee.Map.Entry<K,V>> f);
 		public abstract new V @get (K key);
@@ -75,7 +75,7 @@ namespace Gee {
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractMultiMap<K,V> : GLib.Object, Gee.MultiMap<K,V> {
 		protected Gee.Map<K,Gee.Collection<V>> _storage_map;
-		public AbstractMultiMap (Gee.Map<K,Gee.Collection<V>> storage_map);
+		protected AbstractMultiMap (Gee.Map<K,Gee.Collection<V>> storage_map);
 		protected abstract Gee.MultiSet<K> create_multi_key_set ();
 		protected abstract Gee.Collection<V> create_value_storage ();
 		protected abstract Gee.EqualDataFunc<V> get_value_equal_func ();
@@ -84,7 +84,7 @@ namespace Gee {
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractMultiSet<G> : Gee.AbstractCollection<G>, Gee.MultiSet<G> {
 		protected Gee.Map<G,int> _storage_map;
-		public AbstractMultiSet (Gee.Map<G,int> storage_map);
+		protected AbstractMultiSet (Gee.Map<G,int> storage_map);
 		public override bool add (G item);
 		public override void clear ();
 		public override bool contains (G item);
@@ -96,7 +96,7 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractQueue<G> : Gee.AbstractCollection<G>, Gee.Queue<G> {
-		public AbstractQueue ();
+		protected AbstractQueue ();
 		public abstract G peek ();
 		public abstract G poll ();
 		public abstract int capacity { get; }
@@ -105,12 +105,12 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractSet<G> : Gee.AbstractCollection<G>, Gee.Set<G> {
-		public AbstractSet ();
+		protected AbstractSet ();
 		public virtual Gee.Set<G> read_only_view { owned get; }
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractSortedMap<K,V> : Gee.AbstractMap<K,V>, Gee.SortedMap<K,V> {
-		public AbstractSortedMap ();
+		protected AbstractSortedMap ();
 		public abstract Gee.SortedMap<K,V> head_map (K before);
 		public abstract Gee.SortedMap<K,V> sub_map (K before, K after);
 		public abstract Gee.SortedMap<K,V> tail_map (K after);
@@ -119,7 +119,7 @@ namespace Gee {
 	}
 	[CCode (cheader_filename = "gee.h")]
 	public abstract class AbstractSortedSet<G> : Gee.AbstractSet<G>, Gee.SortedSet<G> {
-		public AbstractSortedSet ();
+		protected AbstractSortedSet ();
 		public abstract G ceil (G element);
 		public abstract G first ();
 		public abstract G floor (G element);
