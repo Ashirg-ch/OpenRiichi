@@ -654,7 +654,7 @@ namespace Gee {
 	[GenericAccessors]
 	public interface Map<K,V> : GLib.Object, Gee.Iterable<Gee.Map.Entry<K,V>> {
 		public abstract class Entry<K,V> : GLib.Object {
-			public Entry ();
+			protected Entry ();
 			public abstract K key { get; }
 			public abstract bool read_only { get; }
 			public abstract V value { get; set; }
