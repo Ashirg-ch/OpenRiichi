@@ -117,7 +117,7 @@ private abstract class SubOptionsMenuView : MainMenuSubView
 
     public signal void back_clicked(SubOptionsMenuView menu);
 
-    public SubOptionsMenuView(string name, Options options, string apply_text, string back_text, int padding)
+    protected SubOptionsMenuView(string name, Options options, string apply_text, string back_text, int padding)
     {
         menu_name = name;
         this.options = options;
