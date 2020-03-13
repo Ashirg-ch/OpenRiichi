@@ -124,7 +124,7 @@ public class GameLogRound : Serializable
 
 public abstract class GameLogLine : Serializable
 {
-    public GameLogLine(TimeStamp timestamp)
+    protected GameLogLine(TimeStamp timestamp)
     {
         this.timestamp = timestamp;
     }
